@@ -68,8 +68,8 @@ function geolocalizar(){
 	//console.log("geolocalizar");
 	alert("En geolocalizar");
 	if (navigator.geolocation) {
-		  alert("En navigator.geolocation");
-		  var successFunction = function(position){
+		  alert("En navigator.geolocation Position:" + position);
+		  function successFunction(position){
 		      alert("En successFunction");
 			  coor_x = position.coords.longitude;
 			  coor_y = position.coords.latitude;
@@ -80,7 +80,7 @@ function geolocalizar(){
 			  
 			  cargarCategoria();
 		  };
-		  var errorFunction = function(){
+		  function errorFunction(){
 			  alert("errorFunction");	
 			  loading(false);
 			  alert("Se ha producido un error al geolocalizar");
