@@ -66,6 +66,7 @@ function errorExit(){
 
 function geolocalizar(){
 	//console.log("geolocalizar");
+	alert("En geolocalizar");
 	if (navigator.geolocation) {
 		  var successFunction = function(position){
 			  coor_x = position.coords.longitude;
@@ -75,12 +76,13 @@ function geolocalizar(){
 			  cargarCategoria();
 		  };
 		  var errorFunction = function(){
-			  alert("Se ha producido un error al geolocalizar");
 			  loading(false);
+			  alert("Se ha producido un error al geolocalizar");
 		  };
 		  loading(true);
 		  navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
 		} else {
+		  loading(false);
 		  alert("El navegador utilizado no soporta la geolocalización");
 		}
 }
