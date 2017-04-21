@@ -69,7 +69,7 @@ function geolocalizar(){
 	alert("En geolocalizar");
 	if (navigator.geolocation) {
 		  alert("En navigator.geolocation Position:" + position);
-		  function successFunction(position){
+		  var successFunction = function(position){
 		      alert("En successFunction");
 			  coor_x = position.coords.longitude;
 			  coor_y = position.coords.latitude;
@@ -80,7 +80,7 @@ function geolocalizar(){
 			  
 			  cargarCategoria();
 		  };
-		  function errorFunction(){
+		  var errorFunction = function(){
 			  alert("errorFunction");	
 			  loading(false);
 			  alert("Se ha producido un error al geolocalizar");
@@ -88,7 +88,8 @@ function geolocalizar(){
 		  loading(true);
 		  alert("Antes navigator");	
 		  navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
-		  alert("Despues navigator");	
+		  alert("Despues navigator");
+		  loading(false);		  
 		} else {
 		  loading(false);
 		  alert("El navegador utilizado no soporta la geolocalización");
