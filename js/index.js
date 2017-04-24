@@ -70,26 +70,21 @@ function geolocalizar(){
 	if (navigator.geolocation) {
 		  alert("En navigator.geolocation Position:" + position);
 		  var successFunction = function(position){
-		      alert("En successFunction");
 			  coor_x = position.coords.longitude;
 			  coor_y = position.coords.latitude;
-			  alert("En successFunction X:" + coor_x);
 			  idEntidad = null;
-			  alert("En successFunction Y:" + coor_y);
 			  loading(false);
-			  
 			  cargarCategoria();
 		  };
 		  var errorFunction = function(){
-			  alert("errorFunction");	
-			  loading(false);
 			  alert("Se ha producido un error al geolocalizar");
+			  loading(false);
 		  };
 		  loading(true);
 		  alert("Antes navigator");	
 		  navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
 		  alert("Despues navigator");
-		  loading(false);		  
+		    
 		} else {
 		  loading(false);
 		  alert("El navegador utilizado no soporta la geolocalización");
