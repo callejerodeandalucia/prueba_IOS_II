@@ -81,7 +81,10 @@ function geolocalizar(){
 		  };
 		  loading(true);
 		  alert("Antes navigator");	
-		  navigator.geolocation.getCurrentPosition(successFunction, errorFunction,timeout:8000);
+		  navigator.geolocation.getCurrentPosition(successFunction, errorFunction,{
+			maximumAge: 75000,
+			timeout: 8000
+		});
 		  alert("Despues navigator");
 		    
 		} else {
@@ -89,6 +92,7 @@ function geolocalizar(){
 		  alert("El navegador utilizado no soporta la geolocalización");
 		}
 }
+
 
 function cargarCategoria(cat){
 	var requestParam = "";
