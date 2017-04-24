@@ -68,7 +68,6 @@ function geolocalizar(){
 	//console.log("geolocalizar");
 	alert("En geolocalizar");
 	if (navigator.geolocation) {
-		  alert("En navigator.geolocation Position:" + position);
 		  var successFunction = function(position){
 			  coor_x = position.coords.longitude;
 			  coor_y = position.coords.latitude;
