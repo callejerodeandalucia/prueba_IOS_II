@@ -66,7 +66,6 @@ function errorExit(){
 
 function geolocalizar(){
 	//console.log("geolocalizar");
-	alert("En geolocalizar");
 	if (navigator.geolocation) {
 		  var successFunction = function(position){
 			  coor_x = position.coords.longitude;
@@ -76,23 +75,20 @@ function geolocalizar(){
 			  cargarCategoria();
 		  };
 		  var errorFunction = function(){
-			  alert("Se ha producido un error al geolocalizar");
+			  alert("Compruebe que tiene activada la ubicación del dispositivo y que se encuentra cerca del municipio Alhama de Almería.");
 			  loading(false);
 		  };
-		  loading(true);
-		  alert("Antes navigator");	
+		  loading(true);	
 		  navigator.geolocation.getCurrentPosition(successFunction, errorFunction,{
 			maximumAge: 75000,
 			timeout: 8000
 		});
-		  alert("Despues navigator");
 		    
 		} else {
 		  loading(false);
 		  alert("El navegador utilizado no soporta la geolocalización");
 		}
 }
-
 
 function cargarCategoria(cat){
 	var requestParam = "";
