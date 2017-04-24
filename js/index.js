@@ -81,7 +81,7 @@ function geolocalizar(){
 		  };
 		  loading(true);
 		  alert("Antes navigator");	
-		  navigator.geolocation.getCurrentPosition(successFunction, errorFunction);
+		  navigator.geolocation.getCurrentPosition(successFunction, errorFunction,timeout:8000);
 		  alert("Despues navigator");
 		    
 		} else {
