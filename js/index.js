@@ -92,19 +92,14 @@ function geolocalizar(){
 
 function cargarCategoria(cat){
 	var requestParam = "";
-	alert("Cargar Categorias 1");	
 	if(cat != null){
-		alert("Cargar Categorias 2");	
 		requestParam = "?id_categoria=" + cat.id;
 		pilaCategorias.push(cat);
 
 	}else{
-	    alert("Cargar Categorias 3");
 		requestParam = "?id_aplicacion=" + aplicacion.id;
 	}
-	alert("Cargar Categorias 4"); 
 	$("#contenidoCategorias").html("");
-	alert("Cargar Categorias 5");
 	$.mobile.changePage("#categorias");
 	loading(true);
 	$.ajax({
@@ -138,7 +133,6 @@ function cargarCategoria(cat){
  	 });
 
 }
-
 function cargarDatos(cat){
 	//console.log(cat);
 	pilaCategorias.push(cat);
